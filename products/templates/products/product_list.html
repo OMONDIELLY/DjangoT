@@ -1,8 +1,25 @@
 {%extends 'base.html'%}
 
 {%block content%}
-{%for instance in object_list%}
-    <p>{{instance.id}}- <a href='{{instance.get_absolute_url}}'>{{instance.title}}</a></p>
-{% endfor %}
+
+<div class="row">
+    {%for instance in object_list%}
+    <div class="col">
+
+        <div class="card" style="width: 18rem;">
+            <img src="product.image_url" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{product.title}}</h5>
+              <p class="card-text">{{product.price}}</p>
+              <a href="#" class="btn btn-primary"></a>
+            </div>
+          </div>
+        <p>{{instance.id}}- <a href='{{instance.get_absolute_url}}'>{{instance.title}}-(&{{instance.price}})</a></p>
+  
+    </div>
+    {% endfor %}
+</div>
+
+    
 </form>
 {%endblock%}

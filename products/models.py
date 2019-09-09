@@ -6,9 +6,10 @@ class product(models.Model):
        description = models.TextField(blank=True , null=True)
        price =       models.DecimalField(decimal_places=2, max_digits=65 ) 
        summary =   models.TextField()
+       
   
 
        def get_absolute_url(self):
-           return reverse("products:product-detail",kwargs={})
+           return reverse("products:product-detail",kwargs={"id":self.id})
        #     return f"/products/{self.id}/"
      
